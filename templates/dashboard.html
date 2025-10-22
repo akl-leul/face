@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h2>Registered Users</h2>
+  <table border="1">
+    <tr><th>ID</th><th>Name</th><th>Image</th></tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user[0] }}</td>
+      <td>{{ user[1] }}</td>
+      <td><img src="{{ url_for('static', filename='uploads/' + user[2]) }}" width="100"></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <a href="/camera">Start Recognition</a>
+</body>
+</html>
